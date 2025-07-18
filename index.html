@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnlyFox 🔥</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background: #111;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff3c3c;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      color: #ff3c3c;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .video-container video {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .vantagem, .plano {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #ff3c3c;
+      text-align: left;
+    }
+
+    .plano h3 {
+      margin: 10px 0;
+    }
+
+    .botao, .plano a {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #ff3c3c;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .botao:hover, .plano a:hover {
+      background-color: #e13232;
+    }
+
+    .medalha {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 20px 15px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#vantagens">Vantagens</a>
+    <a href="#planos">Planos</a>
+  </nav>
+
+  <section id="inicio">
+    <h1>Bem-vindo ao OnlyFox 😈</h1>
+    <div class="video-container">
+      <h2>🔥 Conteúdo exclusivo te espera 🔥</h2>
+      <video src="https://www.dropbox.com/scl/fi/4nrea0ue576hab7aymdoe/IMG_0099-1-1-1.mp4?rlkey=pfyxcw0l6qhqxu72mtjs5fl4x&raw=1" controls autoplay muted playsinline></video>
+    </div>
+  </section>
+
+  <section id="vantagens">
+    <h2>Por que assinar o OnlyFox?</h2>
+    <div class="vantagem"><span class="medalha">🏅</span>Conteúdo proibidão sem censura</div>
+    <div class="vantagem"><span class="medalha">🏅</span>Lançamentos toda semana</div>
+    <div class="vantagem"><span class="medalha">🏅</span>Acesso imediato no Telegram</div>
+    <div class="vantagem"><span class="medalha">🏅</span>Mais de 100k mídias exclusivas</div>
+    <div class="vantagem"><span class="medalha">🏅</span>Compatível com qualquer dispositivo</div>
+    <div class="vantagem"><span class="medalha">🏅</span>Suporte VIP no Telegram</div>
+  </section>
+
+  <section id="planos">
+    <h2>Escolha seu plano</h2>
+    <div class="plano">
+      <h3>Mensal — R$10,00</h3>
+      <p>✅ Acesso imediato</p>
+      <p>✅ Atualizações semanais</p>
+      <a href="https://pay.kirvano.com/3fab3094-2043-4cda-a2db-4bab4c77adef" target="_blank">Assinar Mensal</a>
+    </div>
+    <div class="plano">
+      <h3>Vitalício — R$20,00</h3>
+      <p>✅ Acesso vitalício total</p>
+      <p>✅ Sem renovações, sem pegadinha</p>
+      <a href="https://pay.kirvano.com/d0af6c00-6cbc-4cc9-b298-fb58cb2bb3e5" target="_blank">Assinar Vitalício</a>
+    </div>
+  </section>
+</body>
+</html>
