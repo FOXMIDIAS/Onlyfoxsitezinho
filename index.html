@@ -81,23 +81,35 @@
 
     .plano {
       background-color: #1a1a1a;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border: 2px solid #ff3c3c;  /* borda destacada */
-      box-shadow: 0 4px 8px rgba(255, 60, 60, 0.3); /* sombra suave */
-      text-align: left;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      padding: 25px 20px;
+      margin-bottom: 30px;
+      border: 2px solid #ff3c3c;
+      box-shadow: 0 4px 10px rgba(255, 60, 60, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
     }
 
     .plano:hover {
       background-color: #2c2c2c;
-      box-shadow: 0 8px 16px rgba(255, 60, 60, 0.5);
+      box-shadow: 0 8px 20px rgba(255, 60, 60, 0.6);
+      transform: scale(1.02);
     }
 
-    .plano h3 {
-      margin: 10px 0;
+    .plano.recomendado {
+      border-color: gold;
+      background-color: #222;
+    }
+
+    .plano.recomendado h3,
+    .plano.recomendado p {
+      color: gold;
+    }
+
+    .plano ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.6;
     }
 
     .botao {
@@ -105,11 +117,38 @@
       margin-top: 15px;
       background-color: #ff3c3c;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 1rem;
       border-radius: 8px;
       text-decoration: none;
-      pointer-events: none; /* evita conflito com o link pai */
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .botao:hover {
+      background-color: #e60000;
+    }
+
+    .botao.gold {
+      background-color: gold;
+      color: #000;
+    }
+
+    .botao.gold:hover {
+      background-color: #e6c300;
+    }
+
+    .selo {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: gold;
+      color: #000;
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
     @media (max-width: 600px) {
@@ -139,41 +178,46 @@
     <h1>Bem-vindo ao OnlyFox 😈</h1>
     <div class="video-container">
       <h2>🔥 Conteúdo exclusivo te espera 🔥</h2>
-      <video src="https://www.dropbox.com/scl/fi/4nrea0ue576hab7aymdoe/IMG_0099-1-1-1.mp4?rlkey=pfyxcw0l6qhqxu72mtjs5fl4x&raw=1" controls autoplay muted playsinline></video>
+      <video src="https://www.dropbox.com/scl/fi/4nrea0ue576hab7aymdoe/IMG_0099-1-1-1.mp4?rlkey=pfyxcw0l6qhqxu72mtjs5fl4x&raw=1" controls playsinline></video>
     </div>
   </section>
 
   <section id="vantagens">
     <h2>Por que assinar o OnlyFox?</h2>
-    <div class="vantagem"><span class="medalha">🏅</span>Conteúdo proibidão sem censura</div>
-    <div class="vantagem"><span class="medalha">🏅</span>Lançamentos toda semana</div>
-    <div class="vantagem"><span class="medalha">🏅</span>Acesso imediato no Telegram</div>
-    <div class="vantagem"><span class="medalha">🏅</span>Mais de 100k mídias exclusivas</div>
-    <div class="vantagem"><span class="medalha">🏅</span>Compatível com qualquer dispositivo</div>
-    <div class="vantagem"><span class="medalha">🏅</span>Suporte VIP no Telegram</div>
+    <div class="vantagem">🏅 Conteúdo proibidão sem censura</div>
+    <div class="vantagem">🏅 Lançamentos toda semana</div>
+    <div class="vantagem">🏅 Acesso imediato no Telegram</div>
+    <div class="vantagem">🏅 Mais de 100k mídias exclusivas</div>
+    <div class="vantagem">🏅 Compatível com qualquer dispositivo</div>
+    <div class="vantagem">🏅 Suporte VIP no Telegram</div>
   </section>
 
   <section id="planos">
     <h2>Escolha seu plano</h2>
 
-    <a href="https://pay.kirvano.com/3fab3094-2043-4cda-a2db-4bab4c77adef" target="_blank" style="text-decoration: none;">
-      <div class="plano">
-        <h3>Mensal — R$10,00</h3>
-        <p>✅ Acesso imediato</p>
-        <p>✅ Atualizações semanais</p>
-        <span class="botao">Assinar Mensal</span>
-      </div>
-    </a>
+    <div class="plano">
+      <h3>🔥 Plano Mensal</h3>
+      <p><strong style="background: #ff3c3c; padding: 4px 8px; border-radius: 6px;">R$10,00 / mês</strong></p>
+      <ul>
+        <li>✅ Acesso imediato após pagamento</li>
+        <li>✅ Novos conteúdos toda semana</li>
+        <li>✅ Suporte no Telegram</li>
+      </ul>
+      <a href="https://pay.kirvano.com/3fab3094-2043-4cda-a2db-4bab4c77adef" target="_blank" class="botao">Assinar Mensal</a>
+    </div>
 
-    <a href="https://pay.kirvano.com/d0af6c00-6cbc-4cc9-b298-fb58cb2bb3e5" target="_blank" style="text-decoration: none;">
-      <div class="plano">
-        <h3>Vitalício — R$20,00</h3>
-        <p>✅ Acesso vitalício total</p>
-        <p>✅ Sem renovações, sem pegadinha</p>
-        <span class="botao">Assinar Vitalício</span>
-      </div>
-    </a>
+    <div class="plano recomendado">
+      <div class="selo">MAIS VANTAJOSO</div>
+      <h3>👑 Plano Vitalício</h3>
+      <p><strong style="background: gold; color: #000; padding: 4px 8px; border-radius: 6px;">R$20,00 único</strong></p>
+      <ul>
+        <li>✅ Acesso para sempre, sem mensalidade</li>
+        <li>✅ Conteúdo exclusivo liberado na hora</li>
+        <li>✅ Sem renovações. Pagou, usou pra sempre</li>
+        <li>✅ Suporte VIP no Telegram</li>
+      </ul>
+      <a href="https://pay.kirvano.com/d0af6c00-6cbc-4cc9-b298-fb58cb2bb3e5" target="_blank" class="botao gold">Assinar Vitalício</a>
+    </div>
   </section>
 </body>
 </html>
-      
