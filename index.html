@@ -2,15 +2,25 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>OnlyFox 🔥</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet" />
   <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       background-color: #000;
       color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.4;
     }
 
     nav {
@@ -24,43 +34,59 @@
 
     nav a {
       color: #fff;
-      margin: 0 15px;
+      margin: 0 12px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      padding: 8px 6px;
       transition: color 0.3s ease;
+      user-select: none;
     }
 
-    nav a:hover {
+    nav a:hover, nav a:focus {
       color: #ff3c3c;
+      outline: none;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 30px 15px;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
     }
 
+    /* Títulos mais chamativos e profissionais */
     h1, h2, h3 {
-      color: #ff3c3c;
-      text-align: center;
-      margin: 0 0 20px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-shadow: 2px 2px 6px rgba(255, 60, 60, 0.7);
+      background: linear-gradient(90deg, #ff3c3c, #ff6868);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      user-select: none;
+      font-style: normal;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.8rem;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 2.2rem;
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
     }
 
     .video-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     .video-container video {
@@ -68,101 +94,274 @@
       max-width: 500px;
       height: auto;
       border-radius: 12px;
+      background: #111;
+      outline: none;
     }
 
+    /* Vantagens */
     .vantagem {
       background-color: #1a1a1a;
       border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 15px 20px;
+      margin-bottom: 18px;
       border-left: 5px solid #ff3c3c;
       text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.05rem;
+      font-weight: 600;
+      user-select: none;
+      color: #fff;
+    }
+
+    /* Planos */
+    #planos {
+      padding-top: 15px;
     }
 
     .plano {
       background-color: #1a1a1a;
       border-radius: 12px;
-      padding: 25px 20px;
-      margin-bottom: 30px;
+      padding: 20px 25px;
+      margin: 20px auto;
+      max-width: 400px;
       border: 2px solid #ff3c3c;
-      box-shadow: 0 4px 10px rgba(255, 60, 60, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: left;
+      color: #fff;
+      font-weight: 600;
     }
 
     .plano:hover {
-      background-color: #2c2c2c;
+      transform: scale(1.03);
       box-shadow: 0 8px 20px rgba(255, 60, 60, 0.6);
-      transform: scale(1.02);
+      border-color: #ff0000;
     }
 
-    .plano.recomendado {
-      border-color: gold;
-      background-color: #222;
-    }
-
-    .plano.recomendado h3,
-    .plano.recomendado p {
-      color: gold;
-    }
-
-    .plano ul {
-      list-style: none;
-      padding-left: 0;
-      line-height: 1.6;
+    .plano h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #ff3c3c;
+      -webkit-text-fill-color: initial;
+      background: none;
+      text-shadow: none;
+      letter-spacing: normal;
+      -webkit-background-clip: initial;
+      text-transform: none; /* Títulos dos planos em normal para não ficar tudo maiúsculo */
     }
 
     .botao {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 18px;
       background-color: #ff3c3c;
       color: white;
-      padding: 12px 24px;
-      font-size: 1rem;
+      padding: 12px 28px;
+      font-size: 1.1rem;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
       transition: background-color 0.3s ease;
+      user-select: none;
     }
 
-    .botao:hover {
-      background-color: #e60000;
+    .botao:hover, .botao:focus {
+      background-color: #e02e2e;
+      outline: none;
     }
 
-    .botao.gold {
+    /* Plano Vitalício destaque */
+    .plano.vitalicio {
+      border-color: gold;
+      background: #222;
+      color: gold;
+      position: relative;
+    }
+    .plano.vitalicio h3 {
+      color: gold;
+      -webkit-text-fill-color: initial;
+      background: none;
+      text-shadow: none;
+      letter-spacing: normal;
+      -webkit-background-clip: initial;
+      text-transform: none;
+    }
+    .plano.vitalicio .botao {
+      background-color: gold;
+      color: #000;
+    }
+    .plano.vitalicio .botao:hover,
+    .plano.vitalicio .botao:focus {
+      background-color: #d4af37;
+    }
+    .plano.vitalicio .badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: gold;
+      color: #000;
+      font-size: 0.85rem;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-weight: 800;
+      user-select: none;
+    }
+
+    /* Preço destaque */
+    .preco-destaque {
+      font-size: 2rem;
+      font-weight: 900;
+      background-color: #ff3c3c;
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: #fff;
+      display: inline-block;
+      margin: 10px 0 15px;
+      user-select: none;
+    }
+    .plano.vitalicio .preco-destaque {
       background-color: gold;
       color: #000;
     }
 
-    .botao.gold:hover {
-      background-color: #e6c300;
+    /* Carrossel */
+    .swiper {
+      width: 100%;
+      max-width: 900px;
+      padding-bottom: 40px;
+      margin: 40px auto 20px;
+      user-select: none;
     }
 
-    .selo {
+    .swiper-slide {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      width: 300px !important;
+      height: 400px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 15px rgba(255, 60, 60, 0.3);
+      background: #111;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6) grayscale(0.25);
+      border-radius: 12px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .swiper-slide:hover img,
+    .swiper-slide:focus-within img {
+      transform: scale(1.05);
+      filter: brightness(0.85) grayscale(0);
+    }
+
+    /* Botão sobre imagem do carrossel */
+    .btn-overlay {
       position: absolute;
-      top: -10px;
-      right: -10px;
-      background: gold;
-      color: #000;
-      padding: 6px 10px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 60, 60, 0.9);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      opacity: 0.95;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-overlay:hover, .btn-overlay:focus {
+      background-color: #ff0000;
+      outline: none;
     }
 
-    @media (max-width: 600px) {
-      section {
-        padding: 20px 15px;
+    /* Navegação do swiper */
+    .swiper-button-next, .swiper-button-prev {
+      color: #ff3c3c;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.5);
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover,
+    .swiper-button-next:focus, .swiper-button-prev:focus {
+      background-color: #ff3c3c;
+      color: #000;
+      outline: none;
+    }
+
+    /* Responsividade */
+    @media (max-width: 900px) {
+      .swiper-slide {
+        width: 250px !important;
+        height: 340px !important;
+      }
+      .plano {
+        max-width: 360px;
       }
       h1 {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+      }
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 20px 12px;
+      }
+      h1 {
+        font-size: 1.8rem;
       }
       h2 {
         font-size: 1.3rem;
       }
       h3 {
-        font-size: 1rem;
+        font-size: 1.2rem;
+      }
+      .video-container video {
+        max-width: 100%;
+        height: auto;
+      }
+      .plano {
+        max-width: 90vw;
+        margin: 15px auto;
+        padding: 18px 20px;
+      }
+      .swiper-slide {
+        width: 90% !important;
+        height: 260px !important;
+        border-radius: 12px;
+      }
+      .btn-overlay {
+        font-size: 1.2rem;
+        padding: 12px 26px;
+      }
+      .botao {
+        padding: 14px 32px;
+        font-size: 1.2rem;
+      }
+      nav a {
+        font-size: 1.3rem;
+        margin: 0 8px;
+        padding: 10px 6px;
       }
     }
   </style>
@@ -178,18 +377,79 @@
     <h1>Bem-vindo ao OnlyFox 😈</h1>
     <div class="video-container">
       <h2>🔥 Conteúdo exclusivo te espera 🔥</h2>
-      <video src="https://www.dropbox.com/scl/fi/4nrea0ue576hab7aymdoe/IMG_0099-1-1-1.mp4?rlkey=pfyxcw0l6qhqxu72mtjs5fl4x&raw=1" controls playsinline></video>
+      <video controls playsinline style="max-width: 500px; width: 100%; border-radius: 12px;">
+        <source src="https://www.dropbox.com/scl/fi/4nrea0ue576hab7aymdoe/IMG_0099-1-1-1.mp4?rlkey=pfyxcw0l6qhqxu72mtjs5fl4x&raw=1" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+  </section>
+
+  <section id="carrossel">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/krd24zlnwalqkbxc0g5gj/photo_2024-03-01_16-29-18.jpg?dl=1" alt="Foto 1" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 1">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/o5ald5qy3lx9bae5mk25t/photo_2024-08-18_08-46-53.jpg?dl=1" alt="Foto 2" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 2">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/1jams146ou2858525h629/photo_2024-08-23_15-20-10.jpg?dl=1" alt="Foto 3" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 3">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/q7wosswcw5jg4shqxu1wz/photo_2024-09-09_01-24-11.jpg?dl=1" alt="Foto 4" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 4">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/ou415f6mraojw6zqypfrz/photo_2024-12-21_02-22-20.jpg?dl=1" alt="Foto 5" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 5">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/57nrikr5ueu9dpwgexq6a/photo_2025-01-07_22-07-24.jpg?dl=1" alt="Foto 6" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 6">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/3coxov5bckk2b76vf61ts/photo_2025-05-30_22-43-32.jpg?dl=1" alt="Foto 7" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 7">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/wwct1eweoke4pcif05o4x/photo_2025-06-12_11-08-34.jpg?dl=1" alt="Foto 8" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 8">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/wl3skgf5j650nb5hwuxtd/photo_2025-06-21_12-29-20.jpg?dl=1" alt="Foto 9" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 9">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/mxcy3gvkdo3awr4gx2nc3/photo_2025-07-09_20-03-46.jpg?dl=1" alt="Foto 10" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 10">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/yl0fnwyc19bt2apitd6tl/photo_2025-07-23_10-18-05.jpg?dl=1" alt="Foto 11" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 11">Quero Agora</a>
+        </div>
+        <div class="swiper-slide" tabindex="0">
+          <img src="https://www.dropbox.com/scl/fi/pv30gc2kiqfycidzzy3q9/photo_2025-07-23_10-18-35.jpg?dl=1" alt="Foto 12" />
+          <a href="#planos" class="btn-overlay" role="button" aria-label="Quero Agora - Foto 12">Quero Agora</a>
+        </div>
+      </div>
+      <!-- Navegação -->
+      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Próximo slide"></div>
+      <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Slide anterior"></div>
     </div>
   </section>
 
   <section id="vantagens">
     <h2>Por que assinar o OnlyFox?</h2>
-    <div class="vantagem">🏅 Conteúdo proibidão sem censura</div>
-    <div class="vantagem">🏅 Lançamentos toda semana</div>
-    <div class="vantagem">🏅 Acesso imediato no Telegram</div>
-    <div class="vantagem">🏅 Mais de 100k mídias exclusivas</div>
-    <div class="vantagem">🏅 Compatível com qualquer dispositivo</div>
-    <div class="vantagem">🏅 Suporte VIP no Telegram</div>
+    <div class="vantagem"><span>🏅</span>Conteúdo proibidão sem censura</div>
+    <div class="vantagem"><span>🏅</span>Lançamentos toda semana</div>
+    <div class="vantagem"><span>🏅</span>Acesso imediato no Telegram</div>
+    <div class="vantagem"><span>🏅</span>Mais de 100k mídias exclusivas</div>
+    <div class="vantagem"><span>🏅</span>Compatível com qualquer dispositivo</div>
+    <div class="vantagem"><span>🏅</span>Suporte VIP no Telegram</div>
   </section>
 
   <section id="planos">
@@ -197,7 +457,7 @@
 
     <div class="plano">
       <h3>🔥 Plano Mensal</h3>
-      <p><strong style="background: #ff3c3c; padding: 4px 8px; border-radius: 6px;">R$10,00 / mês</strong></p>
+      <p><span class="preco-destaque">R$10,00 / mês</span></p>
       <ul>
         <li>✅ Acesso imediato após pagamento</li>
         <li>✅ Novos conteúdos toda semana</li>
@@ -206,18 +466,41 @@
       <a href="https://pay.kirvano.com/3fab3094-2043-4cda-a2db-4bab4c77adef" target="_blank" class="botao">Assinar Mensal</a>
     </div>
 
-    <div class="plano recomendado">
-      <div class="selo">MAIS VANTAJOSO</div>
+    <div class="plano vitalicio">
+      <div class="badge">MAIS VANTAJOSO</div>
       <h3>👑 Plano Vitalício</h3>
-      <p><strong style="background: gold; color: #000; padding: 4px 8px; border-radius: 6px;">R$20,00 único</strong></p>
+      <p><span class="preco-destaque">R$20,00 único</span></p>
       <ul>
         <li>✅ Acesso para sempre, sem mensalidade</li>
         <li>✅ Conteúdo exclusivo liberado na hora</li>
         <li>✅ Sem renovações. Pagou, usou pra sempre</li>
         <li>✅ Suporte VIP no Telegram</li>
       </ul>
-      <a href="https://pay.kirvano.com/d0af6c00-6cbc-4cc9-b298-fb58cb2bb3e5" target="_blank" class="botao gold">Assinar Vitalício</a>
+      <a href="https://pay.kirvano.com/d0af6c00-6cbc-4cc9-b298-fb58cb2bb3e5" target="_blank" class="botao">Assinar Vitalício</a>
     </div>
   </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        600: { slidesPerView: 2 },
+        900: { slidesPerView: 3 }
+      }
+    });
+  </script>
 </body>
 </html>
